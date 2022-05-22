@@ -19,10 +19,18 @@ test {
 
 /*
 spring-boot-starter-web
-    스프링 부트로 Spring MVC를 사용한 REST API를 개발하는데 사용하는 dependency
+    스프링 부트로 Spring MVC를 사용한 REST API를 개발하는데 사용하는 라이브러리이다.
 spring-boot-starter-test
-    JUnit, Hamcrest, Mockito를 포함한 스프링 어플리케이션을 테스트하도록 하는 dependency
+    JUnit, Hamcrest, Mockito를 포함한 스프링 어플리케이션을 테스트하는 라이브러리이다.
 lombok
+    자바 개발 때 자주 사용하는 코드인
+    Getter, Setter, 생성자 등을 어노테이션으로 자동 생성해주는 라이브러리이다.
+spring-boot-starter-data-jpa
+    스프링 부트용 Spring Data JPA 추상화 라이브러리이다.
+    스프링 부트 버전에 맞춰 자동으로 JPA 관련 라이브러리들의 버전을 관리한다.
+h2
+    인메모리 관계형 데이터베이스이다.
+    메모리에서 실행되기 때문에 애플리케이션을 재시작할 때마다 초기화된다.
 
  */
 dependencies {
@@ -33,6 +41,9 @@ dependencies {
     annotationProcessor('org.projectlombok:lombok')
     testImplementation('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
+
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('com.h2database:h2')
 }
 
 test {
